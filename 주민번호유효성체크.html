@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+			font-family: 'Gaegu', cursive;
+		}
+
+		h1 {
+			position: absolute;
+			left: 33%;
+			top: 4%;
+			font-size: 39px;
+		}
+
+		.mainBox {
+			position: absolute;
+			top: 50%;
+			margin-top: -200px;
+			left: 50%;
+			margin-left: -350px;
+
+			width: 700px;
+			height: 400px;
+			border-radius: 30px;
+			background-color: aquamarine;
+			text-align: center;
+			animation-name: bullet;
+			animation-duration: 6s;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes bullet {
+			0% {
+				background-color: rgb(204, 209, 231);
+			}
+
+			25% {
+				background-color: rgb(155, 216, 165);
+			}
+
+			50% {
+				background-color: rgb(211, 178, 181);
+			}
+
+			100% {
+				background-color: rgb(231, 206, 214);
+			}
+		}
+
+		.inputBox {
+			width: 200px;
+			height: 50px;
+			margin: 20px;
+			border-radius: 10px;
+			font-size: 20px;
+			text-align: center;
+			outline: none;
+		}
+
+		.buttonBox {
+			width: 200px;
+			height: 50px;
+			background-color: rgb(201, 192, 255);
+			border: 5px solid rgb(100, 108, 220);
+			border-radius: 15px;
+			margin: auto;
+			font-size: 30px;
+			text-align: center;
+			line-height: 47px;
+			transition: all 0.1s linear;
+		}
+
+		.buttonBox:hover {
+			background-color: rgb(220, 100, 220);
+			border-color: pink;
+			cursor: pointer;
+			color: rgb(106, 149, 212);
+			font-size: 40px;
+		}
+
+		.printBox {
+			width: 500px;
+			height: 150px;
+			color: rgb(230, 230, 235);
+			margin: 45px auto;
+			border-radius: 70px;
+			font-size: 30px;
+			line-height: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>당신의 주민번호를 검사할께요.<i class="xi-search"></i></h1>
+	<div class="mainBox">	
+		<input id="fNumber" class="inputBox" type="text" maxlength="6" value="">
+		<span>-</span>
+		<input id="sNumber" class="inputBox" type="password" maxlength="7" value="">
+		<div id="buttonBox" class="buttonBox">검&nbsp&nbsp사</div>
+		<div id="printBox" class="printBox"></div>
+	</div>
+
+	<script>
+		let buttonBox = document.getElementById("buttonBox");
+
+		buttonBox.onclick = function () {
+			let fNumber = document.getElementById("fNumber").value; // 첫번째 주민번호 받는 자리
+			let sNumber = document.getElementById("sNumber").value; // 두번째 주민번호 받는 자리
+			let printBox = document.getElementById("printBox"); // 출력하는 박스
+
+			let yy = '',
+				mm = '',
+				dd = '';
+			let sumValue = 0;
+			let arrayOne = [];
+			let confirmArray = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5];
+
+			function checkZoomin(yNum, mNum, dNum, gender, lastNum, fPush, sPush, pass, fail) { // 주민번호 함수
+
+				this.yNum = function () {
+					for (i = 0; i < 2; i++) { // 년도 받는 자리
+						yy += yNum[i];
+					}
+					return yy
+				};
+
+				this.mNum = function () {
+					for (i = 2; i < 4; i++) { // 월 받는 자리
+						mm += mNum[i];
+					}
+					return mm
+				};
+
+				this.dNum = function () {
+					for (i = 4; i < 6; i++) { // 날짜 받는 자리
+						dd += dNum[i];
+					}
+					return dd
+				};
+				this.gender = parseInt(gender[0]); // 성별
+				this.lastNum = parseInt(lastNum[6]); //마지막 숫자
+
+				this.fPush = function () {
+					for (i = 0; i < fPush.length; i++) { //첫번째 숫자열. 배열로 넣기
+						arrayOne.push(fPush[i]);
+					}
+					return arrayOne
+				}
+
+				this.sPush = function () {
+					for (i = 0; i < sPush.length - 1; i++) { //두번째 숫자열. 배열로 넣기
+						arrayOne.push(sPush[i]);
+					}
+					return arrayOne
+				}
+
+				this.pass = function () { // 번호가 유효할시 출력
+					pass.style.backgroundColor = 'skyblue';
+					pass.style.lineHeight ='146px';
+					pass.innerHTML = "유효한 주민등록번호네요~" + '<i class="xi-emoticon-cool-o"></i>';
+				}
+
+				this.fail = function () { // 아닐 시에 출력할 부분
+					fail.style.backgroundColor = 'darkgray';
+					fail.style.lineHeight ='78px';
+					fail.innerHTML = "유효하지 않는 주민등록번호 입니다.<br>다시 입력해주세요" + '<i class="xi-emoticon-bad-o"></i>';
+				}
+			}
+
+			let civilian = new checkZoomin(fNumber, fNumber, fNumber, sNumber, sNumber, fNumber, sNumber, printBox,
+				printBox) // 위에 객체를 복사
+
+			if (fNumber == 0 && sNumber == 0) {
+				alert("주민등록 번호를 입력해주세요")
+			};
+
+			if (civilian.mNum() > 12) {
+				alert("정확한 달을 입력해 주세요")
+			}; // 월이 틀릴 시에
+			if (civilian.dNum() > 31) {
+				alert("정확한 날짜를 입력해 주세요")
+			}; // 날짜가 틀릴 시에
+
+
+			civilian.fPush();
+			civilian.sPush();
+
+
+			for (i = 0; i < arrayOne.length; i++) {
+				sumValue += arrayOne[i] * confirmArray[i] // 유효넘버랑 생년월일 각 곱하기
+			}
+			sumValue = (11 - (sumValue % 11)) % 10;
+
+
+			if (sumValue === civilian.lastNum) { //20년대 생일 때 년도 별 성별 확인
+				if (civilian.yNum() > 21) {
+					if (civilian.gender == 1 || civilian.gender == 2 || civilian.gender == 5 || civilian.gender == 6) {
+						civilian.pass()
+					} else {
+						civilian.fail()
+					}
+				} else if (civilian.gender == 3 || civilian.gender == 4 || civilian.gender == 7 || civilian.gender == 8) {
+					civilian.pass()
+				} else {
+					civilian.fail()
+				}
+			} else {
+				civilian.fail()
+			}
+			arrayOne.length = 0;
+		}
+	</script>
+
+</body>
+
+</html>

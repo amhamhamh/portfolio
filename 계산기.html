@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<script src="./계산기.js"></script>
+	<style>
+		* {
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.nButton {
+			width: 45px;
+			height: 47px;
+			border-radius: 50%;
+			line-height: 48px;
+			color: white;
+			background-color: hsl(45, 41%, 49%);
+			font-size: 24px;
+			cursor: pointer;
+			transition: all 0.3s linear;
+			display: inline-block;
+			text-align: center;
+		}
+
+		.contextS {
+			display: block;
+			width: 200px;
+			height: 71px;
+			outline: 0px;
+			font-size: 50px;
+			text-align: right;
+			border: 10px solid hsl(43, 49%, 33%);
+			margin-left: 10px;
+			margin-top: 20px;
+
+		}
+
+
+		.nButton:hover  {
+			background-color: hsl(43, 60%, 71%);
+
+		}
+		
+		.inputNumbers {
+			position: absolute;
+			display: inline-block;
+			width: 220px;
+			height: 220px;
+			margin-left: 20px;
+			margin-top: 15px;			
+		}
+		
+
+		.backSpace {
+			margin-left: 151px;
+			font-size: 30px;
+		}
+
+		.calMachine {
+			width: 240px;
+			height: 380px;
+			border: 2px solid hsl(60, 13%, 9%);
+			background-color: hsl(354, 95%, 29%);
+			background: linear-gradient(to right bottom, gold, black 10%, red);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -190px;
+			border-radius: 14px;
+			margin-left: -120px;
+
+		}
+	</style>
+</head>
+
+<body>
+	<div class="calMachine">
+		<input id="contextS" class="contextS" type="text" value="" readonly>
+		<div class="inputNumbers">
+			<div id="back" class="nButton backSpace">&lt;</div><br>
+			<div id="no7" class="nButton" value="7">7</div>
+			<div id="no8" class="nButton" value="8">8</div>
+			<div id="no9" class="nButton" value="9">9</div>
+			<div id="mutiple" class="nButton">*</div><br>
+			<div id="no4" class="nButton" value="4">4</div>
+			<div id="no5" class="nButton" value="5">5</div>
+			<div id="no6" class="nButton" value="6">6</div>
+			<div id="minus" class="nButton">-</div><br>
+			<div id="no1" class="nButton" value="1">1</div>
+			<div id="no2" class="nButton" value="2">2</div>
+			<div id="no3" class="nButton" value="3">3</div>
+			<div id="plus" class="nButton">+</div><br>
+			<div id="cancel" class="nButton">C</div>
+			<div id="no0" class="nButton" value="0">0</div>
+			<div id="answer" class="nButton">=</div>
+			<div id="divide" class="nButton">/</div>
+
+		</div>
+	</div>
+
+</body>
+
+</html>
