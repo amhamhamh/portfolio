@@ -1,0 +1,268 @@
+
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<script src="./matrix_script.js"></script>
+	<style>
+		* {
+			padding: 0px;
+			margin: 0px;
+			font-family: 'Do Hyeon', sans-serif;
+		}
+
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		.commonBox {
+			width: 33.3%;
+			height: 100%;
+		}
+
+		.leftBox {
+			display: inline-block;
+			background: pink;
+			position: relative;
+		}
+
+		.middleBox {
+			display: inline-block;
+			background: powderblue;
+			margin-left: -6px;
+			position: relative;
+		}
+
+		.rightBox {
+			display: inline-block;
+			background-color: lightgray;
+			position: absolute;
+		}
+
+		.in_box {
+			width: 300px;
+			height: 60px;
+			border: 1px solid red;
+			text-align: center;
+			line-height: 62px;
+			border-radius: 20px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -152px;
+			margin-top: -335px;
+			font-family: 'Gamja Flower', cursive;
+			font-family: 'Jua', sans-serif;
+		}
+
+		.in_box1 {
+			width: 300px;
+			height: 60px;
+			border: 1px solid red;
+			text-align: center;
+			line-height: 62px;
+			border-radius: 20px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -152px;
+			margin-top: -335px;
+			font-family: 'Gamja Flower', cursive;
+			font-family: 'Jua', sans-serif;
+		}
+
+		.xString {
+			font-size: 29px;
+			font-family: 'Gamja Flower', cursive;
+			font-family: 'Jua', sans-serif;
+		}
+
+		.inNo {
+			width: 100px;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		.calBox {
+			display: inline-block;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 300px;
+			height: 52px;
+			margin-left: -85px;
+			margin-top: -250px;
+		}
+
+		.calBox1 {
+			display: inline-block;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 300px;
+			height: 52px;
+			margin-left: -85px;
+			margin-top: -250px;
+		}
+
+		.calBox2 {
+			display: inline-block;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 300px;
+			height: 52px;
+			margin-left: -100px;
+			margin-top: -330px;
+		}
+
+		.cal_button {
+			border: 1px solid red;
+			background-color: gold;
+			border-radius: 20px;
+			cursor: pointer;
+			margin: auto;
+			width: 150px;
+			height: 50px;
+			font-size: 23px;
+			margin-left: 6px;
+			text-align: center;
+			transition: 0.3s all linear;
+			font-family: 'Jua', sans-serif;
+		}
+
+		.mix_button {
+			border: 1px solid red;
+			background-color: gold;
+			border-radius: 20px;
+			cursor: pointer;
+			margin: auto;
+			width: 92px;
+			height: 50px;
+			font-size: 23px;
+			margin-left: 6px;
+			text-align: center;
+			transition: 0.3s all linear;
+			font-family: 'Jua', sans-serif;
+		}
+
+		.zero_button {
+			border: 1px solid red;
+			background-color: gold;
+			border-radius: 20px;
+			cursor: pointer;
+			margin: auto;
+			width: 80px;
+			height: 50px;
+			font-size: 23px;
+			margin-left: -125px;
+			text-align: center;
+			transition: 0.3s all linear;
+			font-family: 'Jua', sans-serif;
+		}
+
+		.plus_button {
+			border: 1px solid red;
+			background-color: gold;
+			border-radius: 20px;
+			cursor: pointer;
+			margin: auto;
+			width: 92px;
+			height: 50px;
+			font-size: 23px;
+			margin-left: -125px;
+			text-align: center;
+		}
+
+		.cal_button:hover,
+		.zero_button:hover,
+		.plus_button:hover,
+		.mix_button:hover {
+			color: red;
+			font-size: 25px;
+			background-color: rgb(101, 20, 231);
+		}
+
+		.displayArea {
+			background-color: aquamarine;
+			position: absolute;
+			top: 64%;
+			left: 50%;
+			/*
+			border: 10px solid gray;
+			*/
+		}
+
+		.displayArea1 {
+			background-color: aquamarine;
+			position: absolute;
+			top: 64%;
+			left: 50%;
+			/*
+			border: 10px solid gray;
+			*/
+		}
+
+		.input_cell {
+			width: 30px;
+			height: 30px;
+			margin: 5px;
+			text-align: center;
+			line-height: 28px;
+			font-size: 11px;
+			background-color: white;
+			color: #111111;
+			float: left;
+			border: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="commonBox leftBox ">
+		<div class="in_box">
+			<span class="xString">행</span><input id="xX" class="inNo" type="number" value="0" min="1" max="12">
+			<span class="xString">열</span><input id="xY" class="inNo" type="number" value="0" min="1" max="12">
+		</div>
+		<div class="calBox">
+			<button id="just_make1" class="zero_button">zero</button>
+			<button id="random_input1" class="cal_button">random_digit</button>
+			<button id="reset_value1" class="cal_button">reset_matrix</button>
+		</div>
+		<div id="displayArea" class="displayArea"></div>
+	</div>
+	<div class="commonBox middleBox">
+		<div class="calBox2">
+			<button id="plus_button" class="plus_button">plus</button>
+			<button id="minus_button" class="mix_button">minus</button>
+			<button id="multi_button" class="mix_button">multiply</button>
+			<button id="all_reset" class="mix_button">reset_all</button>
+		</div>
+		<div id="displayArea2" class="displayArea1"></div>
+	</div>
+	<div class="commonBox rightBox">
+		<div class="in_box1">
+			<span class="xString">행</span><input id="xX1" class="inNo" type="number" value="0" min="1" max="12">
+			<span class="xString">열</span><input id="xY1" class="inNo" type="number" value="0" min="1" max="12">
+		</div>
+		<div class="calBox1">
+			<button id="just_make2" class="zero_button">zero</button>
+			<button id="random_input2" class="cal_button">random_digit</button>
+			<button id="reset_value2" class="cal_button">reset_matrix</button>
+		</div>
+		<div id="displayArea1" class="displayArea"></div>
+	</div>
+</body>
+
+</html>
