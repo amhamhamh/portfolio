@@ -88,6 +88,18 @@ html,body {
     background: powderblue;
 	margin-left: -6px;
 }
+.matrix_title{	
+	text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;   
+    width: 350px;
+    height: 70px;
+    line-height: 78px;
+    font-size: 80px;
+    margin-left: -175px;
+    margin-top: -340px;
+}
 .rightBox {
 	display: inline-block;
 	background-color: lightgray;
@@ -116,7 +128,7 @@ html,body {
 }
 .calBox2 {  
 	margin-left: -100px;
-	margin-top: -330px;
+	margin-top: -250px;
 }
 .cal_button {
 	@include common_button_property;
