@@ -139,22 +139,21 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
             let k = 0;
             while (i < matrix_1.length) { // 여기에서 값이 0인 행렬을 미리 만들어둠. 안 만들시에 NaN 오류가 뜸.
                 this.in_array.push([]);
-                while (k < matrix_2.length) {
+                while (k < matrix_2[0].length) {
                     this.in_array[i][k] = 0;
                     k++;
                 }
                 k = 0;
                 i++;
             }
-
             i = 0;
+
             while (i < matrix_1.length) {
                 while (j < matrix_1[0].length) {
                     while (k < matrix_2[0].length) {
                         this.in_array[i][k] += Number(matrix_1[i][j]) * Number(matrix_2[j][k]); // 미리 만들어진 값인 0의 행렬에 곱한 값을 누적으로 더해줌.
                         k++;
                     }
-
                     k = 0;
                     j++;
                 }
@@ -164,8 +163,8 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
             }
 
             i = 0;
-            while (i < matrix_1[0].length) {
-                while (k < matrix_2.length) {
+            while (i < matrix_1.length) {
+                while (k < matrix_2[0].length) {
                     this.array_string += '<div class="input_cell">' + this.make_comma(this.in_array[i][k]) + '</div>'; // 만들어진 값들을 make_comma()메소드를 실행한 다음 그 값을 출력함.
                     k++;
                 }
@@ -173,9 +172,9 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
                 i += 1;
             }
 
-            return this.print_cell(matrix_1[0].length, matrix_2.length);
+            return this.print_cell(matrix_1.length, matrix_2[0].length);
         } else {
-            alert("첫번쨰 행렬 열, 두번째 행렬 행, 수가 같아야 합니다.");
+            alert("첫번쨰 행렬 열, 두번째 행렬 행의 수가 같아야 합니다.");
         }
     }
 }
