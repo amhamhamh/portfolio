@@ -57,6 +57,14 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
         return this.print_cell(this.x_line, this.y_line); //그리고 배열을 화면에 출력하는 함수로 넘어감. 
     }
 
+    this.print_cell = function (arg1, arg2) { // 화면에 출력하는 함수. 
+        this.box_id.style.width = (40 * arg1) + "px";
+        this.box_id.style.height = (40 * arg2) + "px";
+        this.box_id.style.marginLeft = (-20 * arg1) + "px";
+        this.box_id.style.marginTop = (-24 * arg2) + "px";
+        this.box_id.innerHTML = this.array_string;
+    }
+
     this.rename_id = function () { // 만들어진 행렬들에게 다시 id값을 부여해줌. 후에 행렬의 셀들이 서로 연산을 함. 
         this.in_array = [];
         let i = 0;
@@ -72,37 +80,6 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
         }
         return this.in_array; // 그 각각의 id 값을 가진 셀들이 출력.
     }
-
-    this.print_cell = function (arg1, arg2) { // 화면에 출력하는 함수. 
-        this.box_id.style.width = (40 * arg1) + "px";
-        this.box_id.style.height = (40 * arg2) + "px";
-        this.box_id.style.marginLeft = (-20 * arg1) + "px";
-        this.box_id.style.marginTop = (-24 * arg2) + "px";
-        this.box_id.innerHTML = this.array_string;
-    }
-
-    this.make_comma = function (arg) { //행렬의 각각 id 값을 받아서, 세자리 콤마형태로 만드는 함수. 
-        let myNR = [];
-        let myF = 1;
-        let resultString = "";
-        var myN = String(arg); //받은 셀의 문자를 문자화함.(유사배열)
-        let i = myN.length - 1;
-        let j = 0;
-        while (i >= 0) {
-            myNR.unshift(myN[i]); // 배열의 마지막 값부터 앞쪽에서 뒤로 밀어냄.
-            if (myF % 3 == 0 && i !== 0) {
-                myNR.unshift(","); // 뒤에서부터 myF3일 떄는 콤마를 찍어줌.
-            }
-            myF++;
-            i--;
-        }
-        while (j < myNR.length) {
-            resultString += myNR[j]; //myNR의 만들어진 배열을 빈 문자열에 넣고
-            j++
-        }
-        return resultString; // 그 값을 다시 출력해줌.
-    }
-
     this.cal_mix = function (matrix_1, matrix_2, cal_method) {
         this.in_array = [];
         if (matrix_1.length == matrix_2.length && matrix_1[0].length == matrix_2[0].length) { // matrix_1, matrix_2의 행과 열의 값이 같아야 함. 
@@ -128,10 +105,9 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
 
             return this.print_cell(matrix_1[0].length, matrix_1.length);
         } else {
-            alert("행과 열의 갯수가 같아야 합니다~!!😖😖"); //xeicon으로 들어가게 수정할 것. 
+            alert("행과 열의 갯수가 같아야 합니다~!!😖😖"); //첫번쨰 행렬의 열과 두번쨰 행렬의 행의 숫자가 다를 때
         }
     }
-
     this.mix_multi = function (matrix_1, matrix_2) { //rename_id로 만들어지 행렬 2개의 각 셀들을 곱셈으로 연산함.
         if (matrix_1.length == matrix_2[0].length) {
             let i = 0;
@@ -157,12 +133,11 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
                     k = 0;
                     j++;
                 }
-
                 j = 0;
                 i++;
             }
-
             i = 0;
+
             while (i < matrix_1.length) {
                 while (k < matrix_2[0].length) {
                     this.array_string += '<div class="input_cell">' + this.make_comma(this.in_array[i][k]) + '</div>'; // 만들어진 값들을 make_comma()메소드를 실행한 다음 그 값을 출력함.
@@ -177,15 +152,36 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
             alert("첫번쨰 행렬 열, 두번째 행렬 행의 수가 같아야 합니다.");
         }
     }
+    this.make_comma = function (arg) { //행렬의 각각 id 값을 받아서, 세자리 콤마형태로 만드는 함수. 
+        let myNR = [];
+        let myF = 1;
+        let resultString = "";
+        var myN = String(arg); //받은 셀의 문자를 문자화함.(유사배열)
+        let i = myN.length - 1;
+        let j = 0;
+        while (i >= 0) {
+            myNR.unshift(myN[i]); // 배열의 마지막 값부터 앞쪽에서 뒤로 밀어냄.
+            if (myF % 3 == 0 && i !== 0) {
+                myNR.unshift(","); // 뒤에서부터 myF3일 떄는 콤마를 찍어줌.
+            }
+            myF++;
+            i--;
+        }
+        while (j < myNR.length) {
+            resultString += myNR[j]; //myNR의 만들어진 배열을 빈 문자열에 넣고
+            j++
+        }
+        return resultString; // 그 값을 다시 출력해줌.
+    }
 }
 
 this.addEventListener('click', function (e) {
-    let xX = parseInt(document.getElementById("xX").value);
-    let xY = parseInt(document.getElementById("xY").value);
-    let xX1 = parseInt(document.getElementById("xX1").value);
-    let xY1 = parseInt(document.getElementById("xY1").value);
-    let displayArea = document.getElementById("displayArea");
-    let displayArea1 = document.getElementById("displayArea1");
+    let xX = parseInt(document.getElementById("xX").value); //Matrix1 X축
+    let xY = parseInt(document.getElementById("xY").value); //Matrix1 Y축
+    let xX1 = parseInt(document.getElementById("xX1").value); //Matrix2 의 X축
+    let xY1 = parseInt(document.getElementById("xY1").value); //Matrix2 의 Y축
+    let displayArea = document.getElementById("displayArea"); //Matrix1 의 출력하는 구역
+    let displayArea1 = document.getElementById("displayArea1"); //Matrix2 의 출력하는 구역
     let get_matrix1 = new make_matrix("cell_one", xX, xY, displayArea);
     let get_matrix2 = new make_matrix("cell_two", xX1, xY1, displayArea1);
     let mix_calculate = new make_matrix("cell_one", xX1, xY1, displayArea2);
@@ -209,13 +205,13 @@ this.addEventListener('click', function (e) {
         case "reset_value1":
             get_matrix1.reset_value();
             break;
+        case "reset_value2":
+            get_matrix2.reset_value();
+            break;
         case "all_reset":
             get_matrix1.reset_value();
             get_matrix2.reset_value();
             mix_calculate.reset_value();
-
-        case "reset_value2":
-            get_matrix2.reset_value();
             break;
         case "plus_button": // 만들어진 2개의 행렬들에게(rename_id)로 다시 셀을 부여해주고, plus로 연산하게 함.
             mix_calculate.cal_mix(get_matrix1.rename_id(), get_matrix2.rename_id(), "plus");
