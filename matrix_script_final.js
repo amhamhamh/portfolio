@@ -155,7 +155,7 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
     this.make_comma = function (arg) { //행렬의 각각 id 값을 받아서, 세자리 콤마형태로 만드는 함수. 
         let myNR = [];
         let myF = 1;
-        let resultString = "";
+        let result_string = "";
         var myN = String(arg); //받은 셀의 문자를 문자화함.(유사배열)
         let i = myN.length - 1;
         let j = 0;
@@ -168,10 +168,10 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
             i--;
         }
         while (j < myNR.length) {
-            resultString += myNR[j]; //myNR의 만들어진 배열을 빈 문자열에 넣고
+            result_string += myNR[j]; //myNR의 만들어진 배열을 빈 문자열에 넣고
             j++
         }
-        return resultString; // 그 값을 다시 출력해줌.
+        return result_string; // 그 값을 다시 출력해줌.
     }
 }
 
@@ -180,11 +180,11 @@ this.addEventListener('click', function (e) {
     let xY = parseInt(document.getElementById("xY").value); //Matrix1 Y축
     let xX1 = parseInt(document.getElementById("xX1").value); //Matrix2 의 X축
     let xY1 = parseInt(document.getElementById("xY1").value); //Matrix2 의 Y축
-    let displayArea = document.getElementById("displayArea"); //Matrix1 의 출력하는 구역
-    let displayArea1 = document.getElementById("displayArea1"); //Matrix2 의 출력하는 구역
-    let get_matrix1 = new make_matrix("cell_one", xX, xY, displayArea);
-    let get_matrix2 = new make_matrix("cell_two", xX1, xY1, displayArea1);
-    let mix_calculate = new make_matrix("cell_one", xX1, xY1, displayArea2);
+    let display_area = document.getElementById("display_area"); //Matrix1 의 출력하는 구역
+    let display_area1 = document.getElementById("display_area1"); //Matrix2 의 출력하는 구역
+    let get_matrix1 = new make_matrix("cell_one", xX, xY, display_area);
+    let get_matrix2 = new make_matrix("cell_two", xX1, xY1, display_area1);
+    let mix_calculate = new make_matrix("cell_one", xX1, xY1, display_area2);
     switch (e.target.id) {
         case 'just_make1':
             get_matrix1.zero_value(); // 0인 값인 배열을 만듬.

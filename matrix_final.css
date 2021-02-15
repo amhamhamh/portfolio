@@ -3,25 +3,31 @@
   margin: 0px;
   font-family: "Do Hyeon", sans-serif;
 }
+
 html, body {
   width: 100%;
   height: 100%;
 }
-.commonBox {
+
+.common_box {
   width: 33.3%;
   height: 100%;
 }
-.leftBox, .middleBox {
+
+.left_box, .middle_box {
   display: inline-block;
   position: relative;
 }
-.leftBox{
+
+.left_box, .middle_box {
   background: pink;
 }
-.middleBox {
+
+.middle_box {
   background: powderblue;
   margin-left: -6px;
 }
+
 .matrix_title {
   text-align: center;
   position: absolute;
@@ -34,11 +40,13 @@ html, body {
   margin-left: -175px;
   margin-top: -340px;
 }
-.rightBox {
+
+.right_box {
   display: inline-block;
   background-color: lightgray;
   position: absolute;
 }
+
 .in_box, .in_box1 {
   width: 300px;
   height: 60px;
@@ -54,17 +62,20 @@ html, body {
   font-family: "Gamja Flower", cursive;
   font-family: "Jua", sans-serif;
 }
-.xString {
+
+.x_string {
   font-size: 29px;
   font-family: "Gamja Flower", cursive;
   font-family: "Jua", sans-serif;
 }
-.inNo {
+
+.in_no {
   width: 100px;
   font-size: 20px;
   text-align: center;
 }
-.calBox, .calBox1, .calBox2 {
+
+.cal_box, .cal_box1, .cal_box2 {
   display: inline-block;
   text-align: center;
   position: absolute;
@@ -73,15 +84,18 @@ html, body {
   width: 300px;
   height: 52px;
 }
-.calBox, .calBox1 {
+
+.cal_box, .cal_box1 {
   margin-left: -85px;
   margin-top: -250px;
 }
-.calBox2 {
+
+.cal_box2 {
   margin-left: -100px;
   margin-top: -250px;
 }
-.cal_button, .mix_button, .plus_button, .zero_button{
+
+.cal_button {
   border: 1px solid red;
   background-color: gold;
   border-radius: 20px;
@@ -91,38 +105,69 @@ html, body {
   text-align: center;
   transition: 0.3s all linear;
   font-family: "Jua", sans-serif;
-}
-.cal_button {
   width: 150px;
   height: 50px;
   margin-left: 6px;
 }
-.mix_button {  
+
+.mix_button {
+  border: 1px solid red;
+  background-color: gold;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: auto;
+  font-size: 23px;
+  text-align: center;
+  transition: 0.3s all linear;
+  font-family: "Jua", sans-serif;
   width: 99px;
   height: 51px;
   margin-left: 6px;
 }
+
 .zero_button {
+  border: 1px solid red;
+  background-color: gold;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: auto;
+  font-size: 23px;
+  text-align: center;
+  transition: 0.3s all linear;
+  font-family: "Jua", sans-serif;
   width: 80px;
   height: 50px;
   margin-left: -125px;
 }
-.plus_button {  
+
+.plus_button {
+  border: 1px solid red;
+  background-color: gold;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: auto;
+  font-size: 23px;
+  text-align: center;
+  transition: 0.3s all linear;
+  font-family: "Jua", sans-serif;
   width: 92px;
   height: 50px;
   margin-left: -125px;
 }
+
 .zero_button:hover, .mix_button:hover, .plus_button:hover, .cal_button:hover {
   color: red;
   font-size: 25px;
   background-color: #6514e7;
 }
-.displayArea, .displayArea1 {
+
+.display_area, .display_area1 {
   background-color: aquamarine;
   position: absolute;
   top: 64%;
   left: 50%;
 }
+
 .input_cell {
   width: 30px;
   height: 30px;
