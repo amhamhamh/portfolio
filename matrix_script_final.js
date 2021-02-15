@@ -105,7 +105,7 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
 
             return this.print_cell(matrix_1[0].length, matrix_1.length);
         } else {
-            alert("행과 열의 갯수가 같아야 합니다~!!😖😖"); //첫번쨰 행렬의 열과 두번쨰 행렬의 행의 숫자가 다를 때
+            alert("행과 열의 갯수가 같아야 합니다~!!"); //첫번쨰 행렬의 열과 두번쨰 행렬의 행의 숫자가 다를 때
         }
     }
     this.mix_multi = function (matrix_1, matrix_2) { //rename_id로 만들어지 행렬 2개의 각 셀들을 곱셈으로 연산함.
