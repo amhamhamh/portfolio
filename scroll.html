@@ -1,0 +1,31 @@
+<head>
+    <style>
+        body {
+            height: 10000px;
+            width: 5000px;
+        }
+
+        #wrap {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <p>scrollTop:<span class="top">0</span>px</p>
+        <p>scrollLeft:<span class="left">0</span>px</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(window).on("scroll", function () {
+            var sc_top = $(this).scrollTop();//브라우저의 수직으로 움직인 값
+            var sc_left = $(this).scrollLeft();//브라우저의 수평으로 움직인 값
+
+            $(".top").text(sc_top);
+            $(".left").text(sc_left);
+        })
+    </script>
+</body>

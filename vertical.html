@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #movePosition {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        #movePosition1 {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .mainBox {
+            width: 100px;
+            height: 100px;
+            border: 10px solid red;
+            background-color: transparent;
+            overflow: hidden;
+        }
+
+        .subBox {
+            width: 100px;
+            height: 400px;
+            font-size: 80px;
+            line-height: 98px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="movePosition">&lt;</p><br>
+    <p id="movePosition1">&gt;</p>
+
+    <div id="mainBox" class="mainBox">        
+        <div id="subBox" class="subBox"><br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></div>         
+    </div>
+
+    <script>
+        var locX = 0;
+        var movePointer = null;
+        var movePointer1 = null;
+
+        moveDown = () => {
+            $("#subBox").css("margin-top", --locX);
+        }
+        $("#movePosition").mouseenter(function (e) {
+            movePointer = setInterval("moveDown()", 50);
+        })
+        $("#movePosition").mouseleave(function (e) {
+            clearInterval(movePointer);
+        })
+
+        moveTop = () => {
+            $("#subBox").css("margin-top", ++locX);
+        }
+        $("#movePosition1").mouseenter(function (e) {
+            movePointer1 = setInterval("moveTop()", 50);
+        })
+        $("#movePosition1").mouseleave(function (e) {
+            clearInterval(movePointer1);
+        })
+    </script>
+</body>
+
+</html>

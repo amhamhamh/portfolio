@@ -1,0 +1,34 @@
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        #wrap {
+            height: 5000px;
+            padding-top: 2000px;
+        }
+    </style>
+</head>
+<script>
+    $(function () {
+        var topNum = $("h1").offset().top;
+        $(window).scrollTop(topNum);
+
+        var sct = $(window).scrollTop();
+        console.log(sct);
+    });
+</script>
+
+<body>
+    <div id="wrap">
+        <h1>위치메소드</h1>
+    </div>
+</body>

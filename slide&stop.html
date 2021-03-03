@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        #movePosition{
+            font-size: 30px;
+            cursor:pointer;
+        }
+        #movePosition1{
+            font-size: 30px;
+            cursor:pointer;
+        }
+        .mainBox{
+            width:100px;
+            height:100px;
+            border: 10px solid red;
+            background-color: transparent;
+            overflow: hidden;
+        }
+        .subBox{
+            width:400px;
+            height:100px;
+            font-size: 80px;
+            line-height:98px;
+        }
+    </style>
+</head>
+<body>
+    <p id="movePosition">&lt;</p><br>
+    <p id="movePosition1">&gt;</p>
+    
+    <div id="mainBox" class="mainBox">
+        <div id="subBox" class="subBox">123456789</div>
+    </div>
+
+    <script>
+        var locX=0;             
+        var movePointer=null;
+        var movePointer1=null;
+
+            moveLeft= () => {$("#subBox").css("margin-left", --locX);}
+            $("#movePosition").mouseenter(function(e){
+                movePointer = setInterval("moveLeft()",50);
+            })
+            $("#movePosition").mouseleave(function(e){
+                clearInterval(movePointer);
+            })
+            
+            moveRight= () => {$("#subBox").css("margin-left", ++locX);}
+            $("#movePosition1").mouseenter(function(e){
+                movePointer1 = setInterval("moveRight()",50);
+            })
+            $("#movePosition1").mouseleave(function(e){
+                clearInterval(movePointer1);
+            })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #movePosition {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        #movePosition1 {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .mainBox {
+            width: 180px;
+            height: 200px;
+            border: 10px solid red;
+            background-color: transparent;
+            overflow: hidden;
+        }
+
+        .pic_size {
+            width: 200px;
+            height: 200px;
+            line-height: 98px;
+        }
+
+        .subBox {
+            float: left;
+            width: 1200px;
+            height: 200px;
+            line-height: 98px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="movePosition">&lt;</p>
+    <p id="movePosition1">&gt;</p>
+
+    <div id="mainBox" class="mainBox">
+        <div id="subBox" class="subBox">
+            <img src="./KakaoTalk_20210228_012828449.jpg" alt="그림1" class="pic_size" id="pic_1">
+            <img src="./KakaoTalk_20210228_012848975.jpg" alt="그림2" class="pic_size" id="pic_2">
+            <img src="./KakaoTalk_20210228_012920266.jpg" alt="그림3" class="pic_size" id="pic_3">
+            <img src="./KakaoTalk_20210228_012947371.jpg" alt="그림4" class="pic_size" id="pic_4">
+            <img src="./KakaoTalk_20210228_013040288.jpg" alt="그림5" class="pic_size" id="pic_5">
+        </div>
+    </div>
+
+    <script>        
+        var left_gap = 0;
+        move_left = () => {
+            if (left_gap <= -800) {
+                clearInterval(move_left);
+            } else {
+                left_gap += -200
+                $("#subBox").css("margin-left", left_gap);
+            }
+        };
+
+        move_right = () => {
+            if (left_gap >= 0) {
+                clearInterval(move_right);
+            } else {
+                left_gap += 200;
+                $("#subBox").css("margin-left", left_gap);
+            }
+        };
+
+        $("#movePosition").click(function () {
+            move_left()
+        });
+        $("#movePosition1").click(function () {
+                move_right()
+            }
+        );
+    </script>
+</body>
+
+</html>

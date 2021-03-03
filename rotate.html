@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #movePosition {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        #movePosition1 {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .mainBox {
+            width: 600px;
+            height: 600px;
+            border: 10px solid red;
+            background-color: transparent;
+            overflow: hidden;
+        }
+
+        .subBox {
+            width: 100px;
+            height: 100px;
+            font-size: 80px;
+            line-height: 98px;
+            /*
+            transform: rotate(45deg);
+            */
+
+            transform: rotate(-45deg);
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <p id="movePosition">&lt;</p>
+    <p id="movePosition1">&gt;</p>
+
+    <div id="mainBox" class="mainBox">
+        <div id="subBox" class="subBox">123456789</div>
+    </div>
+
+    <script>
+        var locX = 0;
+        var locX1 = 0;
+        var movePointer = null;
+        var movePointer1 = null;
+
+        moveUp = () => {
+            $("#subBox").css("margin-top", --locX).css("margin-left", ++locX1);
+        }
+        $("#movePosition").mouseenter(function (e) {
+            movePointer = setInterval("moveUp()", 50);
+        })
+        $("#movePosition").mouseleave(function (e) {
+            clearInterval(movePointer);
+        })
+
+        moveDown = () => {
+            $("#subBox").css("margin-top", ++locX).css("margin-left", --locX1);
+        }
+        $("#movePosition1").mouseenter(function (e) {
+            movePointer1 = setInterval("moveDown()", 50);
+        })
+        $("#movePosition1").mouseleave(function (e) {
+            clearInterval(movePointer1);
+        })
+    </script>
+</body>
+
+</html>
