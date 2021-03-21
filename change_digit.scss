@@ -1,0 +1,239 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+
+@media all and (min-width:1200px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+html,
+body {
+    background-image: url("./calculator.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+@mixin boxs_design {
+    width: 432px;
+    height: 205px;
+    border: 5px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #FFDFDE;
+    opacity: 0.7;
+    border-radius: 16px;
+}
+
+.input_digit_box,
+.input_digit_box1,
+.result_digit_box {
+    @include boxs_design;
+}
+
+.input_digit_box {
+    margin-left: -717px;
+    margin-top: -200px;
+}
+
+.input_digit_box1 {
+    margin-left: 278px;
+    margin-top: -200px;
+}
+
+.result_digit_box {
+    margin-left: -222.5px;
+    margin-top: 103px;
+}
+
+.get_digit {
+    width: 240px;
+    height: 80px;
+    background-color: aquamarine;
+    font-size: 40px;
+    border: 1px solid salmon;
+    text-align: center;
+    border-radius: 16px;
+    font-weight: bolder;    
+    outline: none;
+}
+
+.result_digit {
+    width: 240px;
+    height: 80px;
+    background-color: aquamarine;
+    border: 1px solid salmon;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 20px;
+    font-weight: bolder;
+    outline: none;
+}
+
+.title_calculator {
+    display: flex;
+    justify-content: center;
+    font-size: 76px;
+    margin-top: 10px;
+    font-family: "Poor Story", cursive;
+    position: absolute;
+    left: 41%;
+    top: 3%;
+}
+
+.submit_digit {
+    width: 88px;
+    height: 45px;
+    font-size: 30px;
+    text-align: center;
+    border: 1px solid salmon;
+    border-radius: 10px;
+    font-family: "Gamja Flower", cursive;
+    font-weight: bolder;
+    margin-left: -38px;
+    cursor: pointer;
+}
+
+.submit_digit:hover {
+    background-color: #FFDFB9;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.decimal_express {
+    font-family: "Gamja Flower", cursive;
+    font-size: 32px;
+    font-weight: bolder;
+    margin-left: 90px;
+}
+
+.transfer_digit {
+    border: 1px solid #222;
+    width: 80px;
+    height: 40px;
+    font-size: 19px;
+}
+
+.print_area {
+    border: 1px solid salmon;
+    width: 357px;
+    height: 50px;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 20px;
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+.cal_way {
+    display: flex;
+    width: 340px;
+    height: 120px;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 39.5%;
+    top: 28.5%;
+    border-radius: 30px;
+}
+
+.cal_description {
+    background-color: #FFDFDE;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    font-size: 50px;
+    line-height: 88px;
+    border-radius: 50%;
+    font-weight: bolder;
+    transition: all 0.5 linear;
+    color: #6A7BA2;
+    border: 3px solid #6A7BA2;
+}
+
+.cal_description:hover {
+    background-color: #FFDFB9;
+    cursor: pointer;
+    font-size: 55px;
+}
+
+.mutiple{
+    font-size: 70px;
+    line-height: 78px; 
+}
+.plus {
+    font-size: 70px;
+    line-height: 78px; 
+}
+.plus:hover {
+    background-color: #FFDFB9;
+    cursor: pointer;
+    font-size: 75px;
+}
+
+.transfer_digit2 {
+    margin-left: -150px;
+    margin-top: 40px;
+    width: 80px;
+    height: 40px;
+    font-size: 19px;
+}
+
+.result_express {
+    font-family: "Gamja Flower", cursive;
+    margin-top: -50px;
+    margin-left: -30px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+@mixin box_position {
+    font-size: 25px;
+    position: absolute;
+    top: 30%;
+    font-weight: bolder;
+}
+
+.box1_result {
+    @include box_position;
+    left: 33%;
+}
+
+.box2_result {
+    @include box_position;
+    left: 60%;
+}
+
+.alert_text {
+    position: absolute;
+    left: 38%;
+    top: 52%;
+    font-size: 30px;
+    display: none;
+    animation-name: disappear;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    font-family: "Gamja Flower", cursive;
+}
+
+@keyframes disappear {
+    from {
+        display: block;
+    }
+    to {
+        display: none;
+    }
+}
