@@ -4,71 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <script src="./jquery360.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="./calculator.png">
     <title>진수변환기</title>
     <link rel="stylesheet" href="./change_digit.css">
 </head>
 
 <body>
+    <div class="container-fluid no_space">
+        
+        <div class="row">
+            <h1 class="title_calculator col-xs-12">진수계산기</h1>
+        </div>
 
-    <h1 class="title_calculator">진수계산기</h1>
-    <div class="input_digit_box" id="input_digit_box">
-        <input type="text" class="get_digit" id="get_digit" value="" tabindex="10" autofocus>
-        <button type="submit" class="submit_digit" id="submit_digit1">입력</button>
-        <span class="decimal_express">입력할 진수</span>
-        <select class="transfer_digit" id="transfer_digit">진법
-            <option value="2">2진법</option>
-            <option value="8">8진법</option>
-            <option value="16">16진법</option>
-            <option value="10">10진법</option>
-        </select>
-        <div class="print_area" id="print_area">십진수 변환값</div>
+
+        <div class="row">
+            <div class="input_digit_box col-xs-6" id="input_digit_box">
+                <select class="transfer_digit" id="transfer_digit">진법
+                    <option value="2">2진법 입력</option>
+                    <option value="8">8진법 입력</option>
+                    <option value="16">16진법 입력</option>
+                    <option value="10">10진법 입력</option>
+                </select>
+                <input type="text" class="get_digit" id="get_digit" value="" tabindex="10" autofocus>
+                <button type="submit" class="submit_digit" id="submit_digit1">입력</button>
+                <div class="print_area" id="print_area">십진수 변환값</div>
+            </div>
+
+
+            <div class="input_digit_box1 col-xs-6 " id="input_digit_box1">
+                <select class="transfer_digit" id="transfer_digit1">진법
+                    <option value="2">2진법 입력</option>
+                    <option value="8">8진법 입력</option>
+                    <option value="16">16진법 입력</option>
+                    <option value="10">10진법 입력</option>
+                </select>
+                <input type="text" class="get_digit" id="get_digit1" value="" tabindex="20">
+                <button type="submit" class="submit_digit" id="submit_digit2">입력</button>
+                <div class="print_area" id="print_area1">십진수 변환값</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cal_way col-xs-12">
+                <div class="cal_description plus" id="plus">+</div>
+                <div class="cal_description minus" id="minus">­-</div>
+                <div class="cal_description  mutiple" id="mutiple">&times;</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="alert_text col-xs-12" id="alert_text">양쪽 숫자를 전부 입력해주세요.&#128530;</div>
+        </div>
+
+        <div class="row">
+            <div class="alert_text col-xs-12" id="alert_text1">&nbsp;&nbsp;왼쪽 숫자가 더 커야됩니다.&#128556;</div>
+        </div>
+
+        <div class="row">
+            <div class="result_box col-xs-12">합산구간(10진법 표기)<br>다양한 진법으로 표기해보세요.</div>
+        </div>
+
+        <div class="row">
+            <div class="result_digit_box col-xs-12" id="result_digit_box">
+                <span class="result_express col-xs-9">10진수&rArr;N진수</span>
+                <input type="text" class="result_digit adjust_result col-xs-3" id="result_digit" value="">
+                <select class="transfer_digit2 col-xs-3" id="transfer_digit2">진법
+                    <option value="2">2진법</option>
+                    <option value="8">8진법</option>
+                    <option value="16">16진법</option>
+                    <option value="10">10진법</option>
+                </select>
+                <div class="print_area" id="print_area2">N진법표기</div>
+            </div>
+        </div>
     </div>
-
-    <div class="input_digit_box1" id="input_digit_box1">
-        <input type="text" class="get_digit" id="get_digit1" value="" tabindex="20">
-        <button type="submit" class="submit_digit" id="submit_digit2">입력</button>
-        <span class="decimal_express">입력할 진수</span>
-        <select class="transfer_digit" id="transfer_digit1">진법
-            <option value="2">2진법</option>
-            <option value="8">8진법</option>
-            <option value="16">16진법</option>
-            <option value="10">10진법</option>
-        </select>
-        <div class="print_area" id="print_area1">십진수로 변환</div>
-    </div>
-
-    <div class="cal_way">
-        <div class="cal_description plus" id="plus">&#43;</div>
-        <div class="cal_description" id="minus">­&#9866;</div>
-        <div class="cal_description  mutiple" id="mutiple">&times;</div>
-    </div>
-
-    <div class="alert_text" id="alert_text">양쪽 숫자를 전부 입력해주세요.&#128530;</div>
-    <div class="alert_text" id="alert_text1">왼쪽 숫자가 더 커야됩니다.	&#128556;</div>
-
-    <div class="result_digit_box" id="result_digit_box">
-        <input type="text" class="result_digit" id="result_digit" value="">
-        <span class="result_express">진법 변환</span>
-        <select class="transfer_digit2" id="transfer_digit2">진법
-            <option value="2">2진법</option>
-            <option value="8">8진법</option>
-            <option value="16">16진법</option>
-            <option value="10">10진법</option>
-        </select>
-        <div id="print_area2" class="print_area">N진법표기</div>
-    </div>
-
-
-
-
     <script src="./jquery360.min.js"></script>
     <script src="./change_digit.js"></script>
 </body>
+</div>
 
 </html>
