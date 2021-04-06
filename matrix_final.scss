@@ -13,6 +13,7 @@
 	font-family: 'Gamja Flower', cursive;
 	font-family: 'Jua', sans-serif;
 }
+
 @mixin common_cal_box {
     display: inline-block;
 	text-align: center;
@@ -26,6 +27,7 @@
     margin-left: -85px;
 	margin-top: -250px;
 }
+
 @mixin common_button_property{
     border: 1px solid red;
 	background-color: gold;
@@ -36,7 +38,9 @@
 	text-align: center;
     transition: 0.3s all linear;
 	font-family: 'Jua', sans-serif;
+	outline: none;	
 }
+
 @mixin common_display {
     background-color: aquamarine;
 	position: absolute;
@@ -47,6 +51,7 @@
     color: red;
     font-size: 25px;
     background-color: rgb(101, 20, 231);
+	outline: none;	
 }
 @mixin print_cell{
     width: 30px;
@@ -68,26 +73,33 @@ $zero_plus_button_height: 50px;
 	margin: 0px;
 	font-family: 'Do Hyeon', sans-serif;
 }
+*:focus{
+	outline:none;
+	border: none;
+}
 html,body {
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
+
 .common_box {
 	width: 33.3%;
 	height: 100%;
 }
+
 .left_box {    
 	display: inline-block;	
 	position: relative;    
+	background: pink;
 }
-.left_box{
-    background: pink;
-}
+
 .middle_box {   
     @extend .left_box;
     background: powderblue;
 	margin-left: -6px;
 }
+
 .matrix_title{	
 	text-align: center;
     position: absolute;
@@ -100,14 +112,17 @@ html,body {
     margin-left: -175px;
     margin-top: -340px;
 }
+
 .right_box {
 	display: inline-block;
 	background-color: lightgray;
 	position: absolute;
 }
+
 .in_box, .in_box1 {
     @include input-numberbox;
 }
+
 .x_string {
     font: {
     size: 29px;

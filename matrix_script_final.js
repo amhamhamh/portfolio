@@ -1,22 +1,27 @@
-function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 함수
-    this.cell_id = cell_id; // 셀id
-    this.x_line = x_line; //x축
-    this.y_line = y_line; //y축
-    this.box_id = box_id; //만들어진 box의 id
-    this.in_array = []; //값들을 담을 빈 배열
-    this.array_string = ""; //출력할 때 쓸 빈 문자열
-
-    this.reset_value = function () { //각 개별 box_id를 초기화함.       
+class make_matrix { //matrix를 만드는 객체.
+    constructor(cell_id, x_line, y_line, box_id) {
+        this.cell_id = cell_id; // 셀id
+        this.x_line = x_line; //x축
+        this.y_line = y_line; //y축
+        this.box_id = box_id; //만들어진 box의 id
+        this.in_array = []; //값들을 담을 빈 배열
+        this.array_string = ""; //출력할 때 쓸 빈 문자열
+    }
+    
+    reset_value = () => { //각 개별 box_id를 초기화함.       
         this.box_id.innerHTML = "";
         this.box_id.style.width = "";
         this.box_id.style.height = "";
     }
 
-    this.zero_value = function () { //값이 0인 배열을 만드는 함수
+    zero_value = () => { //값이 0인 배열을 만드는 함수
         let i = 0;
         let j = 0;
-        while (i < this.x_line) {
+        console.log(this.x_line);
+        console.log(this.y_line);
+        while (i < this.x_line) {            
             this.in_array.push([]); // 빈 배열에 X축 만큼 배열을 넣음
+            console.log(this.y_line);
             while (j < this.y_line) {
                 this.in_array[i][j] = 0; // 그 값에 0을 대입함. 
                 j++;
@@ -24,10 +29,12 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
             j = 0;
             i++;
         }
+        i = 0;
+        console.log(this.in_array);
         return this.in_array; // 최종적으로 0으로 만들어진 배열을 출력함. 
     }
 
-    this.make_value = function () { //랜덤 값 배열을 만들 함수. 
+    make_value = () => { //랜덤 값 배열을 만들 함수. 
         let i = 0;
         let j = 0;
         while (i < this.x_line) {
@@ -42,11 +49,11 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
         return this.in_array; // 최종적으로 랜던 값을 만들어진 배열을 뱉음
     }
 
-    this.make_cell = function () { // 만들어진 배열 값을 셀로 만드는 배열
+    make_cell = () => { // 만들어진 배열 값을 셀로 만드는 배열
         let i = 0;
         let j = 0;
         while (i < this.x_line) {
-            this.in_array.push([]); // 빈 배열에 다시 담고.
+            //this.in_array.push([]); // 빈 배열에 다시 담고.
             while (j < this.y_line) { //그 값을 만들어진 배열에 cell_id로 지정해서 다시 담아줌.
                 this.array_string += '<input id=' + this.cell_id + i + j + ' class="input_cell" ' + ' type="number" ' + 'value=' + Number(this.in_array[i][j]) + '>';
                 j++;
@@ -54,10 +61,11 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
             j = 0;
             i++;
         }
-        return this.print_cell(this.x_line, this.y_line); //그리고 배열을 화면에 출력하는 함수로 넘어감. 
+        i= 0;
+        return this.print_cell(this.y_line, this.x_line); //그리고 배열을 화면에 출력하는 함수로 넘어감. 
     }
 
-    this.print_cell = function (arg1, arg2) { // 화면에 출력하는 함수. 
+    print_cell = (arg1, arg2) => { // 화면에 출력하는 함수. 
         this.box_id.style.width = (40 * arg1) + "px";
         this.box_id.style.height = (40 * arg2) + "px";
         this.box_id.style.marginLeft = (-20 * arg1) + "px";
@@ -65,7 +73,7 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
         this.box_id.innerHTML = this.array_string;
     }
 
-    this.rename_id = function () { // 만들어진 행렬들에게 다시 id값을 부여해줌. 후에 행렬의 셀들이 서로 연산을 함. 
+    rename_id = () => { // 만들어진 행렬들에게 다시 id값을 부여해줌. 후에 행렬의 셀들이 서로 연산을 함. 
         this.in_array = [];
         let i = 0;
         let j = 0;
@@ -80,7 +88,7 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
         }
         return this.in_array; // 그 각각의 id 값을 가진 셀들이 출력.
     }
-    this.cal_mix = function (matrix_1, matrix_2, cal_method) {
+    cal_mix = (matrix_1, matrix_2, cal_method) => {
         this.in_array = [];
         if (matrix_1.length == matrix_2.length && matrix_1[0].length == matrix_2[0].length) { // matrix_1, matrix_2의 행과 열의 값이 같아야 함. 
             let i = 0;
@@ -108,7 +116,7 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
             alert("행과 열의 갯수가 같아야 합니다~!!"); //첫번쨰 행렬의 열과 두번쨰 행렬의 행의 숫자가 다를 때
         }
     }
-    this.mix_multi = function (matrix_1, matrix_2) { //rename_id로 만들어지 행렬 2개의 각 셀들을 곱셈으로 연산함.
+    mix_multi = (matrix_1, matrix_2) => { //rename_id로 만들어지 행렬 2개의 각 셀들을 곱셈으로 연산함.
         if (matrix_1.length == matrix_2[0].length) {
             let i = 0;
             let j = 0;
@@ -152,7 +160,7 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
             alert("첫번쨰 행렬 열, 두번째 행렬 행의 수가 같아야 합니다.");
         }
     }
-    this.make_comma = function (arg) { //행렬의 각각 id 값을 받아서, 세자리 콤마형태로 만드는 함수. 
+    make_comma = (arg) => { //행렬의 각각 id 값을 받아서, 세자리 콤마형태로 만드는 함수. 
         let myNR = [];
         let myF = 1;
         let result_string = "";
@@ -175,7 +183,7 @@ function make_matrix(cell_id, x_line, y_line, box_id) { //matrix를 만드는 �
     }
 }
 
-this.addEventListener('click', function (e) {
+this.addEventListener('click', function (e) {    
     let xX = parseInt(document.getElementById("xX").value); //Matrix1 X축
     let xY = parseInt(document.getElementById("xY").value); //Matrix1 Y축
     let xX1 = parseInt(document.getElementById("xX1").value); //Matrix2 의 X축

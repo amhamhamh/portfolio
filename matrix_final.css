@@ -1,12 +1,18 @@
 * {
   padding: 0px;
   margin: 0px;
-  font-family: "Do Hyeon", sans-serif;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+*:focus {
+  outline: none;
+  border: none;
 }
 
 html, body {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .common_box {
@@ -17,9 +23,6 @@ html, body {
 .left_box, .middle_box {
   display: inline-block;
   position: relative;
-}
-
-.left_box, .middle_box {
   background: pink;
 }
 
@@ -59,14 +62,14 @@ html, body {
   left: 50%;
   margin-left: -152px;
   margin-top: -335px;
-  font-family: "Gamja Flower", cursive;
-  font-family: "Jua", sans-serif;
+  font-family: 'Gamja Flower', cursive;
+  font-family: 'Jua', sans-serif;
 }
 
 .x_string {
   font-size: 29px;
-  font-family: "Gamja Flower", cursive;
-  font-family: "Jua", sans-serif;
+  font-family: 'Gamja Flower', cursive;
+  font-family: 'Jua', sans-serif;
 }
 
 .in_no {
@@ -103,8 +106,10 @@ html, body {
   margin: auto;
   font-size: 23px;
   text-align: center;
+  -webkit-transition: 0.3s all linear;
   transition: 0.3s all linear;
-  font-family: "Jua", sans-serif;
+  font-family: 'Jua', sans-serif;
+  outline: none;
   width: 150px;
   height: 50px;
   margin-left: 6px;
@@ -118,8 +123,10 @@ html, body {
   margin: auto;
   font-size: 23px;
   text-align: center;
+  -webkit-transition: 0.3s all linear;
   transition: 0.3s all linear;
-  font-family: "Jua", sans-serif;
+  font-family: 'Jua', sans-serif;
+  outline: none;
   width: 99px;
   height: 51px;
   margin-left: 6px;
@@ -133,8 +140,10 @@ html, body {
   margin: auto;
   font-size: 23px;
   text-align: center;
+  -webkit-transition: 0.3s all linear;
   transition: 0.3s all linear;
-  font-family: "Jua", sans-serif;
+  font-family: 'Jua', sans-serif;
+  outline: none;
   width: 80px;
   height: 50px;
   margin-left: -125px;
@@ -148,8 +157,10 @@ html, body {
   margin: auto;
   font-size: 23px;
   text-align: center;
+  -webkit-transition: 0.3s all linear;
   transition: 0.3s all linear;
-  font-family: "Jua", sans-serif;
+  font-family: 'Jua', sans-serif;
+  outline: none;
   width: 92px;
   height: 50px;
   margin-left: -125px;
@@ -159,6 +170,7 @@ html, body {
   color: red;
   font-size: 25px;
   background-color: #6514e7;
+  outline: none;
 }
 
 .display_area, .display_area1 {
@@ -180,3 +192,4 @@ html, body {
   float: left;
   border: none;
 }
+/*# sourceMappingURL=matrix_final.css.map */
