@@ -19,7 +19,6 @@ class Calculator {
                     let hexA = [];
                     let div_n = 16;
                     var sixteen_zinsu = "";
-
                     function decToHex(inV) {
                         hexA.unshift(hexMatrix[(inV % div_n)]);
                         if (inV < div_n) {
@@ -55,7 +54,6 @@ class Calculator {
                 case "8":
                     var print_digit = [];
                     var eight_zinsu = "";
-
                     function encode_digit(arg) {
                         print_digit.unshift(arg % divN);
                         if (arg < divN) {
@@ -99,7 +97,6 @@ class Calculator {
                 test_ten.test(yepp) ? $(this.print_digit).text(remove_ten_zen(yepp)) : $(this.print_digit).text("10진수를 입력하세요");
                 break;
         }
-
         function remove_ten_zen(arg) {
             var transefer_bitwise = Number(arg);
             return transefer_bitwise;
@@ -133,29 +130,8 @@ class Calculator {
         function translate_sixteen(arg) {
             var transefer_bitwise = arg;
             let hex_matrix = {
-                "0": 0,
-                "1": 1,
-                "2": 2,
-                "3": 3,
-                "4": 4,
-                "5": 5,
-                "6": 6,
-                "7": 7,
-                "8": 8,
-                "9": 9,
-                "A": 10,
-                "B": 11,
-                "C": 12,
-                "D": 13,
-                "E": 14,
-                "F": 15,
-                "a": 10,
-                "b": 11,
-                "c": 12,
-                "d": 13,
-                "e": 14,
-                "f": 15
-            };
+                "0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7,  "8": 8,  "9": 9, "A": 10, "B": 11, "C": 12, "D": 13,"E": 14,
+                "F": 15, "a": 10, "b": 11, "c": 12, "d": 13, "e": 14, "f": 15};
             let transfer_ten = 0;
             let i = 0;
             while (i < transefer_bitwise.length) {
@@ -185,8 +161,10 @@ class Calculator {
     }
     //마이너스 연산
     mix_cal_minus = () => {
+        
         let box1_result = $("#print_area").html();
         let box2_result = $("#print_area1").html();
+        //양쪽 숫자가 입력되지 않을 때 나타나는 부분
         if ($("#get_digit").val() == "" || $("#get_digit1").val() == "") {
             $("#alert_text").fadeIn(2000, "swing", function () {
                 $("#alert_text").show();
@@ -194,6 +172,9 @@ class Calculator {
             });
         } else {
             if (box1_result >= box2_result && box1_result > 0 && box2_result > 0) {
+                console.log(box2_result);
+                console.log(box1_result);
+                console.log(minus_result);
                 var minus_result = parseInt(box1_result) - parseInt(box2_result);
                 $("#result_digit").val(minus_result);
             } else {
