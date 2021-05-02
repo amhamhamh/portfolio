@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&display=swap" rel="stylesheet">	
+	<script src="./matrix_script_final.js"></script>
+	<link rel="stylesheet" href="./matrix_final.css">
+</head>
+<body>
+	<div class="common_box left_box">
+		<div class="in_box">
+			<span class="x_string">행</span><input id="xX" class="in_no" type="number" value="0" min="1" max="12">
+			<span class="x_string">열</span><input id="xY" class="in_no" type="number" value="0" min="1" max="12">
+		</div>
+		<div class="cal_box">
+			<button id="just_make1" class="zero_button">zero</button>
+			<button id="random_input1" class="cal_button">random_digit</button>
+			<button id="reset_value1" class="cal_button">reset_matrix</button>
+		</div>
+		<div id="display_area" class="display_area"></div>
+	</div>
+	<div class="common_box middle_box">
+		<div class="matrix_title">행렬 계산기</div>
+		<div class="cal_box2">
+			<button id="plus_button" class="plus_button">plus</button>
+			<button id="minus_button" class="mix_button">minus</button>
+			<button id="multi_button" class="mix_button">multiply</button>
+			<button id="all_reset" class="mix_button">reset_all</button>
+		</div>
+		<div id="display_area2" class="display_area1"></div>
+	</div>
+	<div class="common_box right_box">
+		<div class="in_box1">
+			<span class="x_string">행</span><input id="xX1" class="in_no" type="number" value="0" min="1" max="12">
+			<span class="x_string">열</span><input id="xY1" class="in_no" type="number" value="0" min="1" max="12">
+		</div>
+		<div class="cal_box1">
+			<button id="just_make2" class="zero_button">zero</button>
+			<button id="random_input2" class="cal_button">random_digit</button>
+			<button id="reset_value2" class="cal_button">reset_matrix</button>
+		</div>
+		<div id="display_area1" class="display_area"></div>
+	</div>
+	<script src="./jquery360.min.js"></script>
+</body>
+</html>

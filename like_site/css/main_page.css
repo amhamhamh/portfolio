@@ -1,0 +1,609 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  font: 10px;
+  font-family: "Jua", sans-serif;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/estudio-bloom-ezqnxsqUZ80-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+
+.main_header .move_main_page {
+  display: flex;
+  position: absolute;
+  top: 1%;
+  left: 2%;
+  flex-flow: row wrap;
+  text-decoration: none;
+}
+.main_header .move_main_page .site_logo {
+  width: 100px;
+  height: 100px;
+}
+.main_header .move_main_page .go_main_page {
+  font-family: "Jua", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 42px;
+  margin-left: 7px;
+  color: #FA26A0;
+}
+.main_header .sub_main_header {
+  position: absolute;
+  top: 18%;
+  left: 66%;
+}
+.main_header .sub_main_header .btn_area .user_plus_btn {
+  width: 180px;
+  height: 43px;
+  font-size: 1.2rem;
+  border-radius: 14px;
+  box-shadow: 3px 3px;
+  background-color: #f8d110c4;
+  transform: translate(100%, 55%);
+  outline: none;
+}
+.main_header .sub_main_header .search_area .search_button {
+  width: 145px;
+  height: 41px;
+  font-size: 1.2rem;
+  border-radius: 14px;
+  box-shadow: 3px 3px;
+  background-color: #f8d110c4;
+  transform: translate(7%, -48%);
+  outline: none;
+}
+
+.search_window {
+  position: absolute;
+  width: 700px;
+  height: 570px;
+  top: 11%;
+  left: 27%;
+  border: 1px solid springgreen;
+  background-color: blueviolet;
+  border-radius: 30px;
+  display: none;
+  z-index: 150;
+}
+.search_window .modal_dsn_title {
+  font-size: 4rem;
+  position: absolute;
+  top: 5%;
+  left: 44%;
+  width: 46%;
+}
+.search_window .modal_dsn_title .sub_modal_ment {
+  font-size: 1.2rem;
+  position: absolute;
+  display: inline-block;
+  top: 10px;
+  left: 121px;
+  width: 136px;
+  color: bisque;
+}
+.search_window .cancel_btn {
+  width: 42px;
+  height: 40px;
+  border: 1px solid springgreen;
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-left: 627px;
+  cursor: pointer;
+}
+.search_window .cancel_btn .cancel_img {
+  width: 42px;
+  height: 40px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 2.5rem;
+}
+.search_window .modal_add_info {
+  height: 51px;
+  width: 620px;
+  border: 1px solid blue;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+  line-height: 57px;
+  transform: translate(40px, 40px);
+}
+.search_window .modal_add_info .modal_add_info_text {
+  width: 169px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid saddlebrown;
+  line-height: 50px;
+  font-size: 1.7rem;
+}
+.search_window .modal_add_info .info_division {
+  width: 169px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid saddlebrown;
+  line-height: 50px;
+  font-size: 1.7rem;
+  transform: translate(-30px, 0px);
+}
+.search_window .modal_add_info .division {
+  width: 257px;
+  height: 50px;
+  font-size: 2rem;
+}
+.search_window .select_design {
+  font-size: 4rem;
+  position: absolute;
+  top: 33%;
+  left: 47%;
+}
+.search_window .division_table {
+  transform: translate(35px, 130px);
+}
+.search_window .input_info {
+  width: 372px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  text-indent: 20px;
+}
+.search_window .search_user_btn {
+  width: 96px;
+  height: 40px;
+  text-align: center;
+  transform: translate(550px, 170px);
+  font-size: 1.3rem;
+  border-radius: 12px;
+  box-shadow: 3px 3px;
+}
+
+.btn_posi {
+  width: 350px;
+  height: 80px;
+  position: absolute;
+  top: 3%;
+  left: 76%;
+  text-align: center;
+}
+.btn_posi .user_welcome {
+  width: 350px;
+  height: 80px;
+  text-align: center;
+  line-height: 84px;
+  font-size: 2rem;
+  font-family: "Jua", sans-serif;
+}
+.btn_posi .logout_ment {
+  margin-top: -16px;
+}
+.btn_posi .logout_ment .logout {
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-family: "Jua", sans-serif;
+}
+
+.like_site_info_head {
+  position: absolute;
+  top: 15%;
+  left: 39%;
+  width: 400px;
+  height: 100px;
+  background-color: blueviolet;
+  text-align: center;
+  line-height: 100px;
+  font-size: 3rem;
+  border-radius: 10px;
+}
+.show_table {
+  position: absolute;
+  top: 30%;
+  left: 7%;
+  width: 85%;
+  height: 60%;
+  background-color: aquamarine;
+  overflow: auto;
+  opacity: 0.6;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.show_table .like_site_info_main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.show_table .like_site_info_main .site_list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  border: 6px solid green;
+  height: 77px;
+}
+.show_table .like_site_info_main .site_list .site_list_desc {
+  font-size: 3rem;
+  /* border: 1px solid red; */
+  list-style: none;
+  text-align: center;
+  float: left;
+  height: 60px;
+  line-height: 70px;
+}
+.show_table .like_site_info_main .site_list .list1 {
+  width: 7%;
+}
+.show_table .like_site_info_main .site_list .list2 {
+  width: 15%;
+}
+.show_table .like_site_info_main .site_list .list3 {
+  width: 26%;
+  margin-left: 1%;
+}
+.show_table .like_site_info_main .site_list .list4 {
+  width: 29%;
+  margin-left: 1%;
+}
+.show_table .like_site_info_main .site_list .list5 {
+  width: 10%;
+  margin-left: 2%;
+}
+.show_table .like_site_info_main .site_list .list6 {
+  width: 13%;
+}
+.show_table .like_site_info_main .like_site_list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  font-size: 2rem;
+  border-bottom: 2px solid blue;
+  width: 100%;
+}
+.show_table .like_site_info_main .like_site_list .record_dsn {
+  list-style: none;
+  float: left;
+  border: 1px solid red;
+  text-align: center;
+}
+.show_table .like_site_info_main .like_site_list .record1 {
+  background-color: coral;
+  width: 7%;
+  height: 50px;
+  text-align: center;
+  margin-left: 0px;
+  line-height: 48px;
+}
+.show_table .like_site_info_main .like_site_list .record2 {
+  background-color: blue;
+  width: 16%;
+  height: 50px;
+  text-align: center;
+  line-height: 48px;
+  margin-left: 0px;
+}
+.show_table .like_site_info_main .like_site_list .record3 {
+  width: 27%;
+  height: 50px;
+  background-color: royalblue;
+}
+.show_table .like_site_info_main .like_site_list .record4 {
+  width: 31%;
+  height: 50px;
+  background-color: yellow;
+}
+.show_table .like_site_info_main .like_site_list .record5 {
+  width: 12%;
+  background-color: khaki;
+}
+.show_table .like_site_info_main .like_site_list .del_site {
+  background-color: darkmagenta;
+  width: 76px;
+  height: 50px;
+  text-align: center;
+  font-size: 2rem;
+  margin-left: 7px;
+}
+.show_table .like_site_info_main .like_site_list .confirm_del {
+  position: fixed;
+  width: 340px;
+  height: 160px;
+  top: 4%;
+  left: 41%;
+  border: 1px solid springgreen;
+  background-color: #66dcdc;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  z-index: 180;
+}
+.show_table .like_site_info_main .like_site_list .confirm_del .confirm_del_ment {
+  display: block;
+  font-size: 2rem;
+  transform: translate(14px, 25px);
+}
+.show_table .like_site_info_main .like_site_list .confirm_del .confirm_del_button {
+  background-color: palevioletred;
+  width: 60px;
+  height: 38px;
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transform: translate(60px, 45px);
+}
+.show_table .like_site_info_main .like_site_list .confirm_del .confirm_del_cancel {
+  background-color: palevioletred;
+  width: 60px;
+  height: 38px;
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transform: translate(156px, 45px);
+}
+.show_table .like_site_info_main .like_site_list .update_site {
+  background-color: limegreen;
+  width: 73px;
+  height: 50px;
+  text-align: center;
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+.add_user {
+  position: absolute;
+  width: 700px;
+  height: 570px;
+  top: 11%;
+  left: 27%;
+  border: 1px solid springgreen;
+  background-color: blueviolet;
+  border-radius: 30px;
+  display: none;
+}
+.add_user .cancel_btn {
+  width: 42px;
+  height: 40px;
+  border: 1px solid springgreen;
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-left: 627px;
+  cursor: pointer;
+}
+.add_user .cancel_btn .cancel_img {
+  width: 42px;
+  height: 40px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 2.5rem;
+}
+.add_user .modal_dsn_title {
+  font-size: 4rem;
+  position: absolute;
+  top: 5%;
+  left: 27%;
+}
+.add_user .input_info_box {
+  width: 638px;
+  height: 405px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid red;
+  transform: translate(30px, 55px);
+}
+.add_user .input_info_box .modal_add_info {
+  height: 51px;
+  width: 620px;
+  border: 1px solid blue;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+  line-height: 57px;
+}
+.add_user .input_info_box .modal_add_info .info_division {
+  width: 169px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid saddlebrown;
+  line-height: 50px;
+  font-size: 1.7rem;
+  transform: translate(-30px, 0px);
+}
+.add_user .input_info_box .modal_add_info .division {
+  width: 257px;
+  height: 50px;
+  font-size: 2rem;
+}
+.add_user .input_info_box .modal_add_info .modal_add_info_text {
+  width: 169px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid saddlebrown;
+  line-height: 50px;
+  font-size: 1.7rem;
+}
+.add_user .input_info_box .modal_add_info .input_info {
+  width: 372px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  text-indent: 20px;
+}
+.add_user .canvas_box {
+  border: 1px solid pink;
+  width: 490px;
+  height: 70px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  line-height: 68px;
+  transform: translate(-5px, 2px);
+}
+.add_user .canvas_box .insert_cap {
+  font-size: 1.5rem;
+  line-height: 70px;
+}
+.add_user .canvas_box .display_random {
+  width: 136px;
+  height: 50px;
+  border: 1px solid red;
+  transform: translate(0px, 9px);
+  border-radius: 10px;
+}
+.add_user .canvas_box .insert_random_num {
+  width: 167px;
+  height: 50px;
+  transform: translate(0px, 9px);
+  border-radius: 10px;
+  font-size: 2rem;
+  text-align: center;
+}
+.add_user .add_user_btn {
+  width: 96px;
+  height: 40px;
+  text-align: center;
+  transform: translate(-13px, 0px);
+  font-size: 1.3rem;
+  border-radius: 12px;
+  box-shadow: 3px 3px;
+}
+
+/*투명도 조절할 것 뒤에 제목과 겹침*/
+.update_site_window {
+  position: fixed;
+  width: 700px;
+  height: 570px;
+  top: 11%;
+  left: 27%;
+  border: 1px solid springgreen;
+  background-color: #ddcf34;
+  border-radius: 30px;
+  display: none;
+  z-index: 200;
+}
+.update_site_window .cancel_btn {
+  width: 42px;
+  height: 40px;
+  border: 1px solid springgreen;
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-left: 627px;
+  cursor: pointer;
+}
+.update_site_window .cancel_btn .img_close {
+  width: 42px;
+  height: 40px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 2.5rem;
+}
+.update_site_window .cancel_btn .cancel_img {
+  width: 42px;
+  height: 40px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 2.5rem;
+}
+.update_site_window .modal_dsn_title {
+  font-size: 4rem;
+  position: absolute;
+  top: 5%;
+  left: 27%;
+}
+.update_site_window .input_info_box {
+  width: 638px;
+  height: 405px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid red;
+  transform: translate(30px, 55px);
+}
+.update_site_window .input_info_box .modal_add_info {
+  height: 51px;
+  width: 620px;
+  border: 1px solid blue;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+  line-height: 57px;
+}
+.update_site_window .input_info_box .modal_add_info .info_division {
+  width: 169px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid saddlebrown;
+  line-height: 50px;
+  font-size: 1.7rem;
+  transform: translate(-30px, 0px);
+}
+.update_site_window .input_info_box .modal_add_info .division {
+  width: 257px;
+  height: 50px;
+  font-size: 2rem;
+}
+.update_site_window .input_info_box .modal_add_info .modal_add_info_text {
+  width: 169px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid saddlebrown;
+  line-height: 50px;
+  font-size: 1.7rem;
+}
+.update_site_window .input_info_box .modal_add_info .input_info {
+  width: 372px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  text-indent: 20px;
+}
+.update_site_window .canvas_box {
+  border: 1px solid pink;
+  width: 490px;
+  height: 70px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  line-height: 68px;
+  transform: translate(-5px, 2px);
+}
+.update_site_window .canvas_box .insert_cap {
+  font-size: 1.5rem;
+  line-height: 70px;
+}
+.update_site_window .canvas_box .display_random {
+  width: 136px;
+  height: 50px;
+  border: 1px solid red;
+  transform: translate(0px, 9px);
+  border-radius: 10px;
+}
+.update_site_window .canvas_box .insert_random_num {
+  width: 167px;
+  height: 50px;
+  transform: translate(0px, 9px);
+  border-radius: 10px;
+  font-size: 2rem;
+  text-align: center;
+}
+.update_site_window .add_user_btn {
+  width: 96px;
+  height: 40px;
+  text-align: center;
+  transform: translate(-13px, 0px);
+  font-size: 1.3rem;
+  border-radius: 12px;
+  box-shadow: 3px 3px;
+}
