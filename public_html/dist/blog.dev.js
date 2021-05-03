@@ -139,61 +139,69 @@ $(void 0).on({
 var box_move = 0;
 
 function move_sheild() {
-  box_move += 10;
+  box_move++;
   $(".portfolio_box_menu").css("transform", "rotate(" + box_move + "deg)");
 }
 
-setInterval("move_sheild()", 1000);
+setInterval("move_sheild()", 50);
 var portfolio_box = 0;
 
 function move_portfolio() {
-  portfolio_box += 450;
+  portfolio_box++;
   $(".portfolio_box_menu>div").css("transform", "rotate(" + portfolio_box + "deg)");
   $(".portfolio_box_menu>div>span").css("transform", "rotate(" + portfolio_box + "deg)");
 }
 
-setInterval("move_portfolio()", 1000);
+setInterval("move_portfolio()", 50);
 $(void 0).on({
   "mouseenter": function mouseenter(e) {
     switch (e.target.className) {
       case 'team_span':
-        $(".team_project_img").css("opacity", 0.4);
+        $(".team_project_img").css("opacity", 0);
         $(".team_span").text("팀프로젝트");
+        $(".team_span").css("background-color", "white");
         break;
 
       case 'like_span':
-        $(".like_site_img").css("opacity", 0.4);
+        $(".like_site_img").css("opacity", 0);
         $(".like_span").text("즐겨찾기");
+        $(".like_span").css("background-color", "white");
         break;
 
       case 'matrix_span':
-        $(".matrix_calculator_img").css("opacity", 0.4);
+        $(".matrix_calculator_img").css("opacity", 0);
         $(".matrix_span").text("행렬계산기");
+        $(".matrix_span").css("background-color", "white");
         break;
 
       case 'zinsu_span':
-        $(".zinsu-calculator_img").css("opacity", 0.4);
+        $(".zinsu-calculator_img").css("opacity", 0);
         $(".zinsu_span").text("진수계산기");
+        $(".zinsu_span").css("background-color", "white");
         break;
 
       case 'brita_span':
-        $(".brita_img").css("opacity", 0.4);
+        $(".brita_img").css("opacity", 0);
         $(".brita_span").text("상세페이지1");
+        $(".brita_span").css("background-color", "white");
         break;
 
       case 'actto_span':
-        $(".actto_img").css("opacity", 0.4);
+        $(".actto_img").css("opacity", 0);
         $(".actto_span").text("상세페이지2");
+        $(".actto_span").css("background-color", "white");
         break;
 
       case 'bespoke_span':
-        $(".bespoke_img").css("opacity", 0.4);
+        $(".bespoke_img").css("opacity", 0);
         $(".bespoke_span").text("상세페이지3");
+        $(".bespoke_span").css("background-color", "white");
         break;
 
       case 'calculator_span':
-        $(".calculator_img").css("opacity", 0.4);
+        $(".calculator_img").css("opacity", 0);
         $(".calculator_span").text("계산기");
+        $(".calculator_span").css("background-color", "white");
         break;
     }
   },
@@ -202,41 +210,49 @@ $(void 0).on({
       case 'team_span':
         $(".team_project_img").css("opacity", 1);
         $(".team_span").text("");
+        $(".team_span").css("background-color", "transparent");
         break;
 
       case 'like_span':
         $(".like_site_img").css("opacity", 1);
         $(".like_span").text("");
+        $(".like_span").css("background-color", "transparent");
         break;
 
       case 'matrix_span':
         $(".matrix_calculator_img").css("opacity", 1);
         $(".matrix_span").text("");
+        $(".matrix_span").css("background-color", "transparent");
         break;
 
       case 'zinsu_span':
         $(".zinsu-calculator_img").css("opacity", 1);
         $(".zinsu_span").text("");
+        $(".zinsu_span").css("background-color", "transparent");
         break;
 
       case 'brita_span':
         $(".brita_img").css("opacity", 1);
         $(".brita_span").text("");
+        $(".brita_span").css("background-color", "transparent");
         break;
 
       case 'actto_span':
         $(".actto_img").css("opacity", 1);
         $(".actto_span").text("");
+        $(".actto_span").css("background-color", "transparent");
         break;
 
       case 'bespoke_span':
         $(".bespoke_img").css("opacity", 1);
         $(".bespoke_span").text("");
+        $(".bespoke_span").css("background-color", "transparent");
         break;
 
       case 'calculator_span':
         $(".calculator_img").css("opacity", 1);
         $(".calculator_span").text("");
+        $(".calculator_span").css("background-color", "transparent");
         break;
     }
   }
@@ -341,3 +357,57 @@ $("#business_card_show").on("click", function () {
     $(".business_card").removeClass('business_card_off');
   }
 });
+$(void 0).on("click", function (e) {
+  switch (e.target.className) {
+    case 'brita_shorcut':
+      console.log("브리타");
+      break;
+
+    case 'accto_shorcut':
+      console.log("액토");
+      break;
+
+    case 'bespoke_shorcut':
+      console.log("비스포크");
+      break;
+
+    case 'big_calculator':
+      console.log("진입함");
+      break;
+  }
+});
+$(void 0).on("click", function (e) {
+  switch (e.target.id) {
+    case 'brita_shorcut':
+      brita_move();
+      $("#brita_shorcut").css("cursor", "pointer");
+      break;
+
+    case 'accto_shorcut':
+      accto_shorcut();
+      $("#accto_shorcut").css("cursor", "pointer");
+      break;
+
+    case 'bespoke_shorcut':
+      bespoke_shorcut();
+      $("#bespoke_shorcut").css("cursor", "pointer");
+      break;
+  }
+});
+
+function brita_move() {
+  location.href = window.open('http://pager.kr/~c12st20/portfolio/product/brita.html');
+  location.reload();
+}
+
+function accto_shorcut() {
+  location.href = window.open('http://pager.kr/~c12st20/portfolio/product/actto.html');
+  location.reload();
+}
+
+function bespoke_shorcut() {
+  location.href = window.open("http://pager.kr/~c12st20/portfolio/product/Bespoke.html");
+  location.reload();
+} // $(this).on("click", function (e) {
+//     console.log(e.target.className);
+// })
