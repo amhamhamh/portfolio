@@ -57,28 +57,30 @@ body {
   left: -29%;
 }
 
-nav {
-  position: fixed;
-  transform: translate(300px, 25px);
-}
-
 .captain_menu {
   position: absolute;
   float: left;
   z-index: 150;
-  top: -17%;
-  left: -13%;
+  top: -41%;
+  left: -15%;
+  transform: translate(0px, 0px);
+  width: 127px;
+  height: 127px;
+  transition: all 0.5s linear;
+  cursor: pointer;
 }
 
 .main > nav {
-  width: 1280px;
-  height: 150px;
+  width: 1074px;
+  height: 80px;
   margin-top: 10px;
   border-radius: 73px;
   position: fixed;
   z-index: 200;
   left: 10%;
   top: 2%;
+  position: fixed;
+  transform: translate(300px, 25px);
 }
 
 nav > ul {
@@ -116,14 +118,6 @@ nav > ul {
   font-size: 4rem;
   color: #96130D;
   font-family: "Roboto", sans-serif;
-}
-
-.captain_menu {
-  transform: translate(0px, 0px);
-  width: 127px;
-  height: 127px;
-  transition: all 0.5s linear;
-  cursor: pointer;
 }
 
 .submenu {
