@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kirang+Haerang&family=Nanum+Gothic:wght@700&display=swap');
+
+* {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 10px;
+    font-family: 'Nanum Gothic',
+        sans-serif;
+}
+
+@font-face {
+    font-family: 'twaysky';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twaysky.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '116watermelon';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/116watermelon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TmonMonsori';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KOTRA_BOLD-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+
+.main1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #FBE7C6;
+
+    nav {
+        width: 55px;
+        height: 240px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-end;
+        top: 31%;
+        right: 1.2%;
+        z-index: 50;
+        line-height: 63px;
+        background-color: #D6AD60;
+        border-radius: 30px;
+        text-align: center;
+        position: fixed;
+
+
+
+        ul {
+            width: 40px;
+            height: 160px;
+            border-radius: 16px;
+        }
+
+        li {
+            width: 40px;
+            height: 52px;
+            text-align: center;
+            /* background-color: #81B622; */
+            /* border: 1px solid beige; */
+            transform: translate(6.5px, -44px);
+        }
+
+        li>a {
+            width: 40px;
+            height: 48px;
+            font-family: "KOTRA_BOLD-Bold";
+            display: block;
+            transition: all 0.5s linear;
+            font-weight: bolder;
+            /* border: 1px solid royalblue; */
+            color: white;
+
+
+        }
+
+        li>a>i {
+            width: 35px;
+            height: 35px;
+
+        }
+
+
+
+        /* 
+        li>a>img {
+            width: 35px;
+            height: 35px;
+           border: 1px solid goldenrod;
+        }
+*/
+        li:nth-child(1)>a:hover {
+            transform: rotate(45deg);
+
+        }
+
+        li:nth-child(2)>a:hover {
+            transform: rotate(-45deg);
+        }
+
+        li:nth-child(3)>a:hover {
+            transform: rotate(45deg);
+        }
+
+        li:nth-child(4)>a:hover {
+            transform: rotate(-45deg);
+        }
+    }
+
+
+    .insta_login {
+        width: 300px;
+        height: 195px;
+        position: absolute;
+        top: 6%;
+        left: 86%;
+        text-align: center;
+
+
+
+
+        .insta_img {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+        }
+
+        .insta_img:hover {
+            width: 85px;
+            height: 85px;
+        }
+
+        .insta_apply {
+            width: 224px;
+            height: 75px;
+            position: absolute;
+            top: 40%;
+            left: 13%;
+            text-align: center;
+            color: black;
+            font-family: "KOTRA_BOLD-Bold";
+            font-size: 1.8rem;
+            line-height: 73px;
+        }
+    }
+
+    .logo_title {
+        width: 419px;
+        height: 190px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        top: 2%;
+        left: 3%;
+
+
+        img {
+            width: 100px;
+            height: 100px;
+
+            display: block;
+        }
+
+        span {
+            display: block;
+            width: 256px;
+            height: 120px;
+            line-height: 67px;
+            font-size: 6rem;
+            font-family: "116watermelon";
+            letter-spacing: 5px;
+        }
+    }
+
+    .knife_plate {
+        width: 600px;
+        height: 600px;
+        position: absolute;
+        top: 5%;
+        left: 33%;
+    }
+
+
+    .plate_title {
+        display: inline-block;
+        padding: 1rem;
+        background: linear-gradient(40deg, #2096ff, #05ffa3) !important;
+        font-size: 3rem;
+        color: #E1C340;
+        -webkit-background-clip: text !important;
+        color: transparent;
+        cursor: pointer;
+        position: absolute;
+        top: 23%;
+        left: 39%;
+        width: 394px;
+        height: 290px;
+        line-height: 95px;
+        text-align: center;
+
+        .plate_word {
+            font-size: 7rem;
+            font-family: "twaysky";
+            font-weight: bolder;
+            letter-spacing: 3px;
+        }
+    }
+
+    .plate_title:hover {
+        display: inline-block;
+        background: linear-gradient(40deg, #ffd86f, #fc6262) !important;
+        -webkit-background-clip: text !important;
+        color: transparent;
+    }
+
+    .sub_title {
+        width: 500px;
+        height: 140px;
+
+        position: absolute;
+        top: 67%;
+        left: 25%;
+
+        .sharp {
+            width: 100px;
+            height: 100px;
+        }
+
+        div {
+            width: 260px;
+            height: 92px;
+
+            display: block;
+            transform: translate(87px, -83px);
+            text-align: left;
+            line-height: 92px;
+            font-size: 5.3rem;
+            font-family: 'TmonMonsori';
+            background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+
+        }
+
+        span {
+            writing-mode: vertical-rl;
+            font-size: 2.3rem;
+            display: block;
+            font-weight: bolder;
+            font-family: "TmonMonsori";
+            width: 80px;
+            height: 100px;
+            text-align: center;
+            line-height: 80px;
+            transform: translate(320px, -181px);
+            background: linear-gradient(to right, #4CD7D0 0%, #A4E8E0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tropical {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 25%;
+            left: 80%;
+        }
+
+    }
+
+    .michrine {
+        width: 400px;
+        height: 150px;
+        position: absolute;
+        top: 66%;
+        left: 57%;
+    }
+
+    .fork {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 69%;
+        left: 55%;
+        filter: brightness(1.8);
+    }
+
+    .main1_footer_ment {
+        width: 800px;
+        height: 126px;
+        position: absolute;
+        top: 83%;
+        left: 29%;
+        text-align: center;
+        line-height: 59px;
+        z-index: 1;
+
+        span {
+            font-size: 5rem;
+        }
+
+        .main1_footer_ment_sub {
+            color: #E73F3C;
+            text-emphasis-style: dot;
+            text-emphasis-position: over left;
+            -webkit-text-emphasis-style: dot;
+            -webkit-text-emphasis-position: over;
+            font-weight: bolder;
+        }
+    }
+
+    .yellow_bar {
+        width: 469px;
+        height: 20px;
+        background-color: #F8FF95;
+        position: absolute;
+        top: 97%;
+        left: 38%;
+        margin-left: -7px;
+        margin-top: 3px;
+    }
+
+
+}
+
+
+.main2 {
+    background-color: #D4F1F4;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .main2_title {
+        width: 700px;
+        height: 100px;
+        position: absolute;
+        top: 5%;
+        left: 32%;
+        font-size: 7rem;
+        color: white;
+        text-align: center;
+        line-height: 98px;
+        font-family: "KOTRA_BOLD-Bold";
+
+        span {
+            font-size: 7rem;
+            color: #F8FF95;
+            font-family: "KOTRA_BOLD-Bold";
+            font-weight: bolder;
+            text-shadow: 4px 4px blue;
+        }
+    }
+
+    .main2_title1 {
+        width: 650px;
+        height: 80px;
+        position: absolute;
+        top: 16%;
+        left: 34%;
+        font-size: 3rem;
+        color: #145DA0;
+        text-align: center;
+        line-height: 78px;
+        font-weight: bolder;
+        font-family: "KOTRA_BOLD-Bold";
+    }
+
+    .main2_title2 {
+        width: 1200px;
+        height: 100px;
+        position: absolute;
+        top: 26%;
+        left: 19%;
+        font-size: 3rem;
+        color: #2E8BC0;
+        text-align: center;
+        line-height: 46px;
+    }
+
+    .main2_img1 {
+        width: 700px;
+        height: 600px;
+        border: 7px solid whitesmoke;
+        position: absolute;
+        border-radius: 50%;
+        top: 40%;
+        left: 3%;
+        z-index: 10;
+    }
+
+    .main2_img2 {
+        width: 1100px;
+        height: 600px;
+        border: 7px solid whitesmoke;
+        position: absolute;
+        top: 40%;
+        left: 38%;
+        z-index: 5;
+    }
+}
+
+.main3 {
+    background-color: #A0E7E5;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+
+    .main3_title {
+        width: 650px;
+        height: 80px;
+        position: absolute;
+
+        top: 16%;
+        left: 34%;
+        font-size: 7rem;
+        color: #145DA0;
+        text-align: center;
+        line-height: 78px;
+        font-weight: bolder;
+        font-family: 'InkLipquid';
+
+        span {
+            font-size: 7rem;
+            color: #145DA0;
+            font-family: 'InkLipquid';
+            text-decoration: underline;
+            text-decoration-color: red;
+        }
+    }
+
+    .main3_title1 {
+        width: 1000px;
+        height: 100px;
+        position: absolute;
+        top: 25%;
+        left: 24%;
+        font-size: 7rem;
+        color: white;
+        text-align: center;
+        line-height: 98px;
+        font-family: "KOTRA_BOLD-Bold";
+
+
+        span {
+            font-size: 7rem;
+            color: #F8FF95;
+            font-style: italic;
+            font-family: 'KOTRA_BOLD-Bold';
+        }
+    }
+
+    .main3_title2 {
+        width: 400px;
+        height: 40px;
+        position: absolute;
+        top: 37%;
+        left: 41%;
+        font-size: 3rem;
+        color: #2E8BC0;
+        text-align: center;
+        line-height: 38px;
+
+
+        span {
+            font-size: 3rem;
+            color: #2E8BC0;
+            font-weight: bolder;
+            font-family: "TmonMonsori";
+        }
+    }
+
+    .main3_img1 {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 40%;
+        left: 38%;
+
+    }
+
+    .main3_img2 {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 40%;
+        left: 38%;
+    }
+
+
+
+    .main2_title3 {
+        width: 1200px;
+        height: 100px;
+        position: absolute;
+        top: 43%;
+        left: 20%;
+        font-size: 3rem;
+        color: #2E8BC0;
+        text-align: center;
+        line-height: 48px;
+
+        font-weight: bolder;
+        font-family: "KOTRA_BOLD-Bold";
+
+        span {
+            font-size: 3rem;
+            font-family: "KOTRA_BOLD-Bold";
+            color: red;
+        }
+    }
+
+    .main3_img1 {
+        width: 900px;
+        height: 800px;
+        position: absolute;
+        top: 62%;
+        left: 8%;
+        border-radius: 50%;
+        z-index: 11;
+        border: 7px solid whitesmoke;
+    }
+
+    .wine_back {
+        width: 409px;
+        height: 1700px;
+        position: absolute;
+        top: -24%;
+        left: 81%;
+        background-color: #c5e9ffa8;
+        transform: rotate(49deg);
+        z-index: 10;
+        border-radius: 155px;
+        opacity: 0.7;
+    }
+
+    .main3_img2 {
+        position: absolute;
+        width: 200px;
+        height: 692px;
+        top: 56%;
+        left: 59%;
+        z-index: 11;
+        transform: rotate(6deg);
+    }
+
+    .wind_desc {
+        position: absolute;
+        width: 316px;
+        height: 53px;
+        top: 67%;
+        left: 64%;
+        z-index: 10;
+        font-size: 4rem;
+        color: white;
+        background-color: #2E8BC0;
+        text-align: center;
+        line-height: 51px;
+        border-radius: 33px;
+        text-indent: 36px;
+    }
+
+    .subment_wine {
+        width: 476px;
+        height: 363px;
+        position: absolute;
+        top: 76%;
+        left: 69%;
+        font-size: 2.7rem;
+        color: #2E8BC0;
+        text-align: center;
+        line-height: 45px;
+        z-index: 17;
+        text-align: left;
+
+        span {
+            font-size: 3rem;
+            font-weight: bolder;
+            color: #2E8BC0;
+            font-family: "KOTRA_BOLD-Bold";
+        }
+    }
+
+}
+
+.main4 {
+    background-color: #D4F1F4;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .caution_apply {
+        width: 100%;
+        height: 40%;
+        position: absolute;
+        background-color: #234A98;
+        top: 60%;
+    }
+
+    .caution_title {
+        font-size: 3.8rem;
+        color: white;
+        width: 200px;
+        height: 240px;
+        text-align: center;
+        line-height: 66px;
+        position: absolute;
+        top: 7%;
+        left: 5%;
+
+    }
+
+    .caution_desc {
+        width: 1240px;
+        height: 300px;
+        position: absolute;
+        top: 9%;
+        left: 25%;
+        line-height: 50px;
+        font-weight: bolder;
+
+        ul {
+            list-style-type: disc;
+
+
+            li {
+                list-style-type: disc;
+                font-size: 2.5rem;
+            }
+
+            li:nth-child(1) {
+                color: #F8FF95;
+            }
+
+            li:nth-child(2) {
+                color: #F8FF95;
+            }
+
+            li:nth-child(4)>span {
+                color: #F8FF95;
+                font-size: 3rem;
+            }
+
+        }
+    }
+}
