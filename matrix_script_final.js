@@ -88,6 +88,7 @@ class make_matrix { //matrix를 만드는 객체.
         }
         return this.in_array; // 그 각각의 id 값을 가진 셀들이 출력.
     }
+
     cal_mix = (matrix_1, matrix_2, cal_method) => {
         this.in_array = [];
         if (matrix_1.length == matrix_2.length && matrix_1[0].length == matrix_2[0].length) { // matrix_1, matrix_2의 행과 열의 값이 같아야 함. 
@@ -116,6 +117,7 @@ class make_matrix { //matrix를 만드는 객체.
             alert("행과 열의 갯수가 같아야 합니다~!!"); //첫번쨰 행렬의 열과 두번쨰 행렬의 행의 숫자가 다를 때
         }
     }
+
     mix_multi = (matrix_1, matrix_2) => { //rename_id로 만들어지 행렬 2개의 각 셀들을 곱셈으로 연산함.
         if (matrix_1.length == matrix_2[0].length) {
             let i = 0;
@@ -160,6 +162,7 @@ class make_matrix { //matrix를 만드는 객체.
             alert("첫번쨰 행렬 열, 두번째 행렬 행의 수가 같아야 합니다.");
         }
     }
+    
     make_comma = (arg) => { //행렬의 각각 id 값을 받아서, 세자리 콤마형태로 만드는 함수. 
         let myNR = [];
         let myF = 1;
